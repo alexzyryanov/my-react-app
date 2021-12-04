@@ -1,0 +1,13 @@
+.genres {
+    
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.genre {
+    background-color: yellow;
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+    margin: 10px;
+}
