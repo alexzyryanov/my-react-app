@@ -6,13 +6,13 @@ import Content from "./content/content";
 import { BrowserRouter } from "react-router-dom";
 
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
       <div className="app">
         <Header/>
         <Navbar/>
-        <Content/>
+        <Content data={props.data} printMessage={props.printMessage}/>
         <Footer/>
       </div>
     </BrowserRouter>

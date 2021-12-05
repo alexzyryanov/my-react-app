@@ -12,8 +12,8 @@ function Navbar() {
                 <NavLink to="#">Моя медиатека</NavLink>
             </div>
             <div className={s.myNav}>
-                <NavLink to="#">Создать плейлист</NavLink>
-                <NavLink to="#">Любимые треки</NavLink>
+                <NavLink to="/create">Создать плейлист</NavLink>
+                <NavLink to="/favorite">Любимые треки</NavLink>
             </div>
         </navbar>
     )
