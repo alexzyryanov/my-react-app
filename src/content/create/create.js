@@ -8,7 +8,6 @@ function Create(props) {
 
     let click = () => {
         let text = textRef.current.value
-        // alert(text)
         props.printMessage(text)
     }
 

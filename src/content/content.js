@@ -14,7 +14,7 @@ function Content(props) {
                 <Route path='/' element={<Home data={props.data.other}/>}/>
                 <Route path='/genres' element={<Genre data={props.data.genres}/>}/>
                 <Route path='/create' element={<Create printMessage={props.printMessage}/>}/>
-                <Route path='/favorite' element={<Favorite data={props.data.sounds}/>}/>
+                <Route path='/favorite' element={<Favorite data={props.data.sounds} printMessage={props.printMessage}/>}/>
             </Routes>            
         </div>
     )
