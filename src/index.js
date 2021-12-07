@@ -3,16 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import data from "./DataForApp.js";
-import { printMessage } from "./DataForApp.js";
+import store from "./redux/store.js";
 import { BrowserRouter } from "react-router-dom";
 
 
-export let renderEntireTree = (data) => {
+export let renderMainApp = () => {
   ReactDOM.render(
     <BrowserRouter>
       <React.StrictMode>
-        <App data={data} printMessage={printMessage} />
+        <App state={store.getState()} dispatch={store.dispatch.bind(store)}/>
       </React.StrictMode>
     </BrowserRouter>,
     document.getElementById('root')
@@ -20,5 +19,8 @@ export let renderEntireTree = (data) => {
 }
 
 
-renderEntireTree(data)
+renderMainApp()
+store.subs(renderMainApp)
+
+
 reportWebVitals()

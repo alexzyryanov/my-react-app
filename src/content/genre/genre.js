@@ -5,7 +5,7 @@ import s from "./genre.module.css"
 function Genre(props) {
     return (
         <div className={s.items}>
-            {props.data.map(genre => {
+            {props.state.map(genre => {
                 return (
                     <div className={s.item}>{genre.id} {genre.name}</div>
                 )

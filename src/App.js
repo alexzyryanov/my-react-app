@@ -10,7 +10,7 @@ function App(props) {
     <div className="app">
       <Header/>
       <Navbar/>
-      <Content data={props.data} printMessage={props.printMessage}/>
+      <Content state={props.state} dispatch={props.dispatch}/>
       <Footer/>
     </div>
   );

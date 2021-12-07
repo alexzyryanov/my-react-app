@@ -11,10 +11,10 @@ function Content(props) {
     return (
         <div className={s.content}>
             <Routes>
-                <Route path='/' element={<Home data={props.data.other}/>}/>
-                <Route path='/genres' element={<Genre data={props.data.genres}/>}/>
-                <Route path='/create' element={<Create printMessage={props.printMessage}/>}/>
-                <Route path='/favorite' element={<Favorite data={props.data.sounds} printMessage={props.printMessage}/>}/>
+                <Route path='/' element={<Home state={props.state.other}/>}/>
+                <Route path='/genres' element={<Genre state={props.state.genres}/>}/>
+                <Route path='/create' element={<Create draft={props.state.soundDraft} dispatch={props.dispatch}/>}/>
+                <Route path='/favorite' element={<Favorite state={props.state.sounds}/>}/>
             </Routes>            
         </div>
     )
