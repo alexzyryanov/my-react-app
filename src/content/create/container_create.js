@@ -1,10 +1,28 @@
-import React from "react";
 import Create from "./create";
+import {draftRedactorActionCreator, addNewTrackActionCreator} from "../../redux/create_reduser"
+import { connect } from "react-redux";
 
 
-function ContainerCreate(props) {
-    return <Create/>
+let contentParam = (state) => {
+    return {
+        soundDraft: state.sounds.soundDraft
+    }
 }
+
+
+let contentCall = (dispatch) => {
+    return {
+        valueCreator: (text) => {
+            dispatch(draftRedactorActionCreator(text))
+        },
+        addNewTrack: (text) => {
+            dispatch(addNewTrackActionCreator(text))
+        }
+    }
+}
+
+
+const ContainerCreate = connect(contentParam, contentCall)(Create)
 
 
 export default ContainerCreate;

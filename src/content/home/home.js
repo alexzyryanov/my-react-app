@@ -5,9 +5,9 @@ import s from "./home.module.css"
 function Home(props) {
     return (
         <div className={s.items}>
-            {props.state.map(other => {
+            {props.other.map((other, index) => {
                 return (
-                    <div className={s.item}>{other.id} {other.name}</div>
+                    <div key={index} className={s.item}>{other.id} {other.name}</div>
                 )
             })}
         </div>

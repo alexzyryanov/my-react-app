@@ -5,9 +5,9 @@ import s from "./favorite.module.css";
 function Favorite(props) {
     return (
         <div className={s.items}>
-            {props.state.map(song => {
+            {props.sounds.map((song, index) => {
                 return (
-                    <div className={s.item}>{song.id} {song.name}</div>
+                    <div key={index} className={s.item}>{song.id} {song.name}</div>
                 )
             })}
         </div>

@@ -5,12 +5,12 @@ import Navbar from "./navbar/navbar";
 import Content from "./content/content";
 
 
-function App(props) {
+function App() {
   return (
     <div className="app">
       <Header/>
       <Navbar/>
-      <Content state={props.state} dispatch={props.dispatch}/>
+      <Content/>
       <Footer/>
     </div>
   );

@@ -3,24 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import store from "./redux/store.js";
 import { BrowserRouter } from "react-router-dom";
+import store from './redux/store';
+import { Provider } from 'react-redux';
 
 
-export let renderMainApp = () => {
-  ReactDOM.render(
-    <BrowserRouter>
+ReactDOM.render(
+  <BrowserRouter>
+    <Provider store={store}>
       <React.StrictMode>
-        <App state={store.getState()} dispatch={store.dispatch.bind(store)}/>
+        <App/>
       </React.StrictMode>
-    </BrowserRouter>,
-    document.getElementById('root')
-  )
-}
-
-
-renderMainApp()
-store.subs(renderMainApp)
+    </Provider>
+  </BrowserRouter>,
+  document.getElementById('root')
+)
 
 
 reportWebVitals()

@@ -1,6 +1,5 @@
 import React from "react";
 import "./create.module.css";
-import {draftRedactorActionCreator, addNewTrackActionCreator} from "../../redux/create_reduser"
 
 
 function Create(props) {
@@ -9,17 +8,17 @@ function Create(props) {
 
     let changer = () => {
         let text = textRef.current.value
-        props.dispatch(draftRedactorActionCreator(text))
+        props.valueCreator(text)
     }
 
     let click = () => {
         let text = textRef.current.value
-        props.dispatch(addNewTrackActionCreator(text))
+        props.addNewTrack(text)
     }
 
     return (
         <div>
-            <input ref={textRef} type="text" value={props.draft} onChange={changer}/>
+            <input ref={textRef} type="text" value={props.soundDraft} onChange={changer}/>
             <button onClick={click}>Click</button>
         </div>
     )
