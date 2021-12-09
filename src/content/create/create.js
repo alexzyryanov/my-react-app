@@ -8,12 +8,12 @@ function Create(props) {
 
     let changer = () => {
         let text = textRef.current.value
-        props.valueCreator(text)
+        props.draftRedactorActionCreator(text)
     }
 
     let click = () => {
         let text = textRef.current.value
-        props.addNewTrack(text)
+        props.addNewTrackActionCreator(text)
     }
 
     return (

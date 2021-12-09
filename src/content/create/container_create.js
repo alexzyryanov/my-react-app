@@ -10,19 +10,7 @@ let contentParam = (state) => {
 }
 
 
-let contentCall = (dispatch) => {
-    return {
-        valueCreator: (text) => {
-            dispatch(draftRedactorActionCreator(text))
-        },
-        addNewTrack: (text) => {
-            dispatch(addNewTrackActionCreator(text))
-        }
-    }
-}
-
-
-const ContainerCreate = connect(contentParam, contentCall)(Create)
+const ContainerCreate = connect(contentParam, {draftRedactorActionCreator, addNewTrackActionCreator})(Create)
 
 
 export default ContainerCreate;
