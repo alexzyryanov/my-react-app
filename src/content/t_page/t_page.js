@@ -14,11 +14,16 @@ class T_page extends React.Component {
         this.setState({value: event.target.value});
     }
 
+    clickAlert = () => {
+        alert("click")
+    }
+
     render() {
         return (
             <div>
                 <input type="text" value={this.state.value} onChange={this.handleChange} />
                 <input type="text" value={this.state.value} onChange={this.handleChange} />
+                <button onClick={this.clickAlert}>click</button>
                 <h1>{this.state.value * 0.13}</h1>
             </div>
         )

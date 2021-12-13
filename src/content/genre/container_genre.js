@@ -2,7 +2,6 @@ import Genre from "./genre";
 import { connect } from "react-redux";
 import React from "react";
 import { addItemActionCreator } from "../../redux/genre_reduser";
-import { getGithub } from "../../api/genre_api";
 
 
 let contentParam = (state) => {
@@ -16,8 +15,7 @@ let contentParam = (state) => {
 class PreGenre extends React.Component {
 
     componentDidMount()  {
-        // fetch("https://api.github.com/users/vonred5")
-        getGithub()
+        fetch("https://api.github.com/users/vonred5")
             .then(response => response.json())
             .then(result => {this.props.addItemActionCreator(result)})
     }

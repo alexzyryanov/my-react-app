@@ -4,21 +4,19 @@ import "./create.module.css";
 
 function Create(props) {
 
-    let textRef = React.createRef()
-
-    let changer = () => {
-        let text = textRef.current.value
+    let changer = (event) => {
+        let text = event.target.value
         props.draftRedactorActionCreator(text)
     }
 
-    let click = () => {
-        let text = textRef.current.value
+    let click = (event) => {
+        let text = event.target.value
         props.addNewTrackActionCreator(text)
     }
 
     return (
         <div>
-            <input ref={textRef} type="text" value={props.soundDraft} onChange={changer}/>
+            <input type="text" value={props.soundDraft} onChange={changer}/>
             <button onClick={click}>Click</button>
         </div>
     )
