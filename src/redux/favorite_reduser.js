@@ -2,17 +2,17 @@ const ADD_ITEM = "ADD_ITEM"
 
 
 let initialState = {
-    genres: null
+    favorites: null
 }
 
 
-const genreReduser = (state = initialState, action) => {
+const favoriteReduser = (state = initialState, action) => {
 
     switch (action.type) {
         case ADD_ITEM:
             return {
                 ...state, 
-                genres: action.text
+                favorites: action.text
             }
 
         default:
@@ -29,4 +29,4 @@ export let addItemActionCreator = (text) => {
 }
 
 
-export default genreReduser;
+export default favoriteReduser;

@@ -3,14 +3,21 @@ import s from "./genre.module.css"
 
 
 function Genre(props) {
-    console.log(props)
+    if (props.genres) {
+        return (
+            <div className={s.items}>
+                {props.genres.genres.map((genre, index) => {
+                    return (
+                        <div key={index} className={s.item}>{genre}</div>
+                    )
+                })}
+            </div>
+        )
+    }
+
     return (
         <div className={s.items}>
-            {props.genres.map((genre, index) => {
-                return (
-                    <div key={index} className={s.item}>{genre.id} {genre.name}</div>
-                )
-            })}
+            <h1>Loading...</h1>
         </div>
     )
 }
