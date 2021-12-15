@@ -26,22 +26,3 @@ navbar {
 .nav > a:hover {
     color: white;
 }
-
-.myNav {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px;
-}
-
-.myNav > a {
-    text-decoration: none;
-    color: #b3b3b3;
-    font-weight: bold;
-    font-size: 20px;
-    padding: 5px 0;
-}
-
-.myNav > a:hover {
-    color: white;
-}

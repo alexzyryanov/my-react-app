@@ -1,10 +1,10 @@
 import React from "react";
 import s from "./content.module.css";
 import { Route, Routes } from "react-router-dom";
-import ContainerCreate from "./create/container_create";
 import ContainerHome from "./home/container_home";
 import ContainerGenre from "./genre/container_genre";
-import ContainerFavorite from "./favorite/container_favorite";
+import ContainerCategorie from "./categorie/container_categorie";
+import ContainerRelease from "./release/container_release";
 
 
 function Content() {
@@ -13,8 +13,8 @@ function Content() {
             <Routes>
                 <Route path='/' element={<ContainerHome/>}/>
                 <Route path='/genres' element={<ContainerGenre/>}/>
-                <Route path='/create' element={<ContainerCreate/>}/>
-                <Route path='/favorites' element={<ContainerFavorite/>}/>
+                <Route path='/categories' element={<ContainerCategorie/>}/>
+                <Route path='/releases' element={<ContainerRelease/>}/>
             </Routes>            
         </div>
     )

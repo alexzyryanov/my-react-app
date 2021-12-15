@@ -1,7 +1,7 @@
 import Genre from "./genre";
 import { connect } from "react-redux";
 import React from "react";
-import { addItemActionCreator } from "../../redux/genre_reduser";
+import { addGenre } from "../../redux/genre_reduser";
 import { request } from  "../../api/api"
 
 
@@ -15,7 +15,7 @@ let contentParam = (state) => {
 class PreGenre extends React.Component {
 
     async componentDidMount()  {                
-        this.props.addItemActionCreator(await request("recommendations/available-genre-seeds"))
+        this.props.addGenre(await request("recommendations/available-genre-seeds"))
     }
 
     render() {
@@ -24,7 +24,7 @@ class PreGenre extends React.Component {
 }
 
 
-const ContainerGenre = connect(contentParam, {addItemActionCreator})(PreGenre)
+const ContainerGenre = connect(contentParam, {addGenre})(PreGenre)
 
 
 export default ContainerGenre;

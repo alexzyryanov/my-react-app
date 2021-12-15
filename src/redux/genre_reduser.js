@@ -1,4 +1,4 @@
-const ADD_ITEM = "ADD_ITEM"
+const ADD_GENRE = "ADD_GENRE"
 
 
 let initialState = {
@@ -9,9 +9,9 @@ let initialState = {
 const genreReduser = (state = initialState, action) => {
 
     switch (action.type) {
-        case ADD_ITEM:
+        case ADD_GENRE:
             return {
-                ...state, 
+                ...state,
                 genres: action.text
             }
 
@@ -21,9 +21,9 @@ const genreReduser = (state = initialState, action) => {
 }
 
 
-export let addItemActionCreator = (text) => {
+export let addGenre = (text) => {
     return {
-        type: ADD_ITEM,
+        type: ADD_GENRE,
         text: text
     }
 }

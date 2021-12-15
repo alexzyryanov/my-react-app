@@ -9,11 +9,8 @@ function Navbar() {
             <div className={s.nav}>
                 <NavLink to="/">Главная</NavLink>
                 <NavLink to="/genres">Жанры</NavLink>
-                <NavLink to="#">Моя медиатека</NavLink>
-            </div>
-            <div className={s.myNav}>
-                <NavLink to="/create">Создать плейлист</NavLink>
-                <NavLink to="/favorites">Любимые треки</NavLink>
+                <NavLink to="/categories">Категории</NavLink>
+                <NavLink to="/releases">Релизы</NavLink>
             </div>
         </navbar>
     )
