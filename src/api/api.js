@@ -16,7 +16,7 @@ async function getAccessToken() {
 
 
 export async function request(url) {
-    let response = await fetch(`https://api.spotify.com/v1/${url}`, {
+    let response = await fetch(url, {
         headers: {
             "Authorization": `Bearer ${await getAccessToken()}`,
             "Content-Type": "application/json"
