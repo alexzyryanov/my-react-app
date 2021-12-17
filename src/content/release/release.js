@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 function Release(props) {
@@ -9,7 +10,9 @@ function Release(props) {
                 return (
                     <div key={index}>
                         <h1>{rel.name}</h1>
-                        <img src={rel.images[1].url}/>
+                        <Link to={`/albums/${rel.id}`}>
+                            <img src={rel.images[1].url}/>
+                        </Link>
                     </div>
                 )
             })}
