@@ -1,0 +1,73 @@
+.items {
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    background-color: #292929;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.cover > a > img {
+    height: 200px;
+    width: 200px;
+    margin: 25px 25px 10px 25px;
+    border-radius: 10px;
+}
+
+.name {
+    margin: 0 25px;
+}
+
+.name > h1 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: white;
+}
+
+.artists {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 25px 25px 25px;
+}
+
+.artists > p {
+    margin-right: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: white;
+}
+
+.paginator {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    width: 300px;
+}
+
+.paginator > button {
+    height: 100%;
+    width: 45%;
+    border: none;
+    border-radius: 10px;
+    background-color: #292929;
+    font-size: 20px;
+    color: white;
+}
+
+.paginator > button:hover {
+    box-shadow: 0px 0px 10px 5px greenyellow;
+    color: greenyellow;
+}
+
+.paginator > button:disabled {
+    opacity: 0;
+}
