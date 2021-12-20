@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import s from "./album.module.css"
 import { useParams } from "react-router-dom";
 import { request } from  "../../api/api";
 
@@ -21,26 +22,37 @@ function Album(props) {
     }
 
     return (
-        <div>
-            <h1>{count.name}</h1>
-            {count.artists.map((art) => {
-                return(
-                    <div>
-                        <p>{art.name}</p>
-                        <p>{art.href}</p>
-                        <p>{art.id}</p>
-                        <p>{art.external_urls.spotify}</p>
+        <>
+        <div class={s.album_page}>
+            <div class={s.about}>
+                <img src={count.images[1].url} alt="cover"/>
+                <div class={s.info}>
+                    <div class={s.type}>
+                        <p>{count.album_type}</p>
                     </div>
-                )
-            })}
-            <p>{count.external_urls.spotify}</p>
-            <img src={count.images[1].url}/>
-            {count.tracks.items.map((tr) => {
-                return(
-                    <audio src={tr.preview_url} controls></audio>
-                )
-            })}
+                    <div class={s.name}>
+                        <a href={count.external_urls.spotify}>{count.name}</a>
+                    </div>
+                    <div class={s.artists}>
+                        {count.artists.map((artist) => {
+                            return(
+                                <a href={artist.external_urls.spotify}>{artist.name}</a>
+                            )
+                        })}
+                    </div>
+                </div>
+            </div>
+            <div class={s.tracks}>
+                {count.tracks.items.map((track) => {
+                    return(
+                        <div class={s.track}>
+                            <audio src={track.preview_url} controls></audio>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
+        </>
     )
 }
 

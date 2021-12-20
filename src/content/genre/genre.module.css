@@ -3,10 +3,24 @@
     flex-wrap: wrap;
 }
 
+.items {
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .item {
-    background-color: yellow;
-    height: 200px;
-    width: 200px;
-    border-radius: 10px;
     margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 250px;
+    background-color: #292929;
+    border-radius: 10px;
+}
+
+.item > h1 {
+    color: white;
 }
