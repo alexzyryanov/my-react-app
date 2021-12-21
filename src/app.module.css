@@ -1,6 +1,7 @@
-.content {
-    background-color: black;
+.app {
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 1000px;
 }

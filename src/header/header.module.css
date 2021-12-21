@@ -1,9 +1,30 @@
 header {
-    background-color: black;
     height: 60px;
     width: 100%;
-    position: fixed;
-    opacity: 0.9;
-    margin-left: 250px;
-    top: 0;
+    margin-bottom: 30px;
+}
+
+.nav {
+    display: flex;
+    justify-content: end;
+    height: 100%;
+    width: 100%;
+}
+
+.nav > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 200px;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.nav > a:hover {
+    background-color: chartreuse;
+    color: black;
 }

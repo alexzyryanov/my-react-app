@@ -9,7 +9,9 @@ function Genre(props) {
             {props.genres.map((genre, index) => {
                 return (
                     <div key={index} className={s.item}>
-                        <h1>{genre}</h1>
+                        <div className={s.name}>
+                            <h1>{genre}</h1>
+                        </div>
                     </div>
                 )
             })}

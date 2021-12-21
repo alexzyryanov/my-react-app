@@ -1,17 +1,14 @@
 import React from "react";
+import s from "./app.module.css";
 import Header from "./header/header";
-import Footer from "./footer/footer";
-import Navbar from "./navbar/navbar";
 import Content from "./content/content";
 
 
 function App() {
   return (
-    <div className="app">
+    <div className={s.app}>
       <Header/>
-      <Navbar/>
       <Content/>
-      <Footer/>
     </div>
   );
 }
