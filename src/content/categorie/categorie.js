@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import s from "./categorie.module.css"
 
 
@@ -9,12 +10,14 @@ function Categorie(props) {
         <div className={s.items}>
             {props.categories.items.map((categ, index) => {
                 return (
-                    <div key={index} className={s.item}>
-                        <img src={categ.icons[0].url} alt="cover"/>
-                        <div className={s.name}>
-                            <h1>{categ.name}</h1>
+                    <Link to={`/playlists/${categ.id}`}>
+                        <div key={index} className={s.item}>
+                            <img src={categ.icons[0].url} alt="cover"/>
+                            <div className={s.name}>
+                                <h1>{categ.name}</h1>
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                 )
             })}
         </div>

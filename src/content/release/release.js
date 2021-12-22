@@ -10,11 +10,10 @@ function Release(props) {
         <div className={s.items}>
             {props.releases.albums.items.map((album, index) => {
                 return (
+                    <Link to={`/albums/${album.id}`}>
                     <div key={index} className={s.item}>
                         <div className={s.cover}>
-                            <Link to={`/albums/${album.id}`}>
-                                <img src={album.images[1].url} alt="img"/>
-                            </Link>
+                            <img src={album.images[1].url} alt="img"/>
                         </div>
 
                         <div className={s.name}>
@@ -31,6 +30,7 @@ function Release(props) {
                             </p>
                         </div>
                     </div>
+                    </Link>
                 )
             })}
         </div>

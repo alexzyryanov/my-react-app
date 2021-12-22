@@ -6,6 +6,7 @@ import ContainerGenre from "./genre/container_genre";
 import ContainerCategorie from "./categorie/container_categorie";
 import ContainerRelease from "./release/container_release";
 import Album from "./album/album"
+import Playlist from "./playlist/playlist";
 
 
 function Content() {
@@ -17,6 +18,7 @@ function Content() {
                 <Route path='/categories' element={<ContainerCategorie/>}/>
                 <Route path='/releases' element={<ContainerRelease/>}/>
                 <Route path='/albums/:id' element={<Album/>}/>
+                <Route path='/playlists/:id' element={<Playlist/>}/>
             </Routes>            
         </div>
     )

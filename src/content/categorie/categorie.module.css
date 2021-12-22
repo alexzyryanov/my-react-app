@@ -1,7 +1,7 @@
 .items {
+    margin-bottom: 30px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
 }
 
 .item {
@@ -10,6 +10,10 @@
     position: relative;
     height: 250px;
     width: 250px;
+}
+
+.item:hover {
+    box-shadow: 0px 0px 10px 5px greenyellow;
 }
 
 .item > img {
@@ -53,7 +57,6 @@
 }
 
 .paginator > button:hover {
-    box-shadow: 0px 0px 10px 5px greenyellow;
     color: greenyellow;
 }
 

@@ -31,12 +31,12 @@ function Album(props) {
                         <p>{count.album_type}</p>
                     </div>
                     <div class={s.name}>
-                        <a href={count.external_urls.spotify}>{count.name}</a>
+                        <a href={count.external_urls.spotify} target="_blank">{count.name}</a>
                     </div>
                     <div class={s.artists}>
                         {count.artists.map((artist) => {
                             return(
-                                <a href={artist.external_urls.spotify}>{artist.name}</a>
+                                <a href={artist.external_urls.spotify} target="_blank">{artist.name}</a>
                             )
                         })}
                     </div>

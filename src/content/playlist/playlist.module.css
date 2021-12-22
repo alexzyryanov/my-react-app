@@ -4,16 +4,12 @@
     flex-wrap: wrap;
 }
 
-a {
-    text-decoration: none;
-}
-
 .item {
-    width: 250px;
-    display: flex;
-    flex-direction: column;
     background-color: #292929;
     margin: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
     border-radius: 10px;
 }
 
@@ -39,17 +35,14 @@ a {
     color: white;
 }
 
-.artists {
+.info {
     display: flex;
     flex-wrap: wrap;
     margin: 0 25px 25px 25px;
 }
 
-.artists > p {
+.info > p {
     margin-right: 10px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
     color: white;
 }
 
