@@ -26,7 +26,7 @@ function Playlist(props) {
         <div className={s.items}>
             {count.playlists.items.map((data, index) => {
                 return (
-                    <a href="#">
+                    <Link to={`/tracks/${data.id}`}>
                     <div key={index} className={s.item}>
                         <div className={s.cover}>
                             <img src={data.images[0].url} alt="cover"/>
@@ -38,7 +38,7 @@ function Playlist(props) {
                             <p>{data.tracks.total} треков</p>
                         </div>
                     </div>
-                    </a>
+                    </Link>
                 )
             })}
         </div>

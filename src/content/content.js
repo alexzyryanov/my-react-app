@@ -7,6 +7,7 @@ import ContainerCategorie from "./categorie/container_categorie";
 import ContainerRelease from "./release/container_release";
 import Album from "./album/album"
 import Playlist from "./playlist/playlist";
+import Track from "./track/track";
 
 
 function Content() {
@@ -19,6 +20,7 @@ function Content() {
                 <Route path='/releases' element={<ContainerRelease/>}/>
                 <Route path='/albums/:id' element={<Album/>}/>
                 <Route path='/playlists/:id' element={<Playlist/>}/>
+                <Route path='/tracks/:id' element={<Track/>}/>
             </Routes>            
         </div>
     )
