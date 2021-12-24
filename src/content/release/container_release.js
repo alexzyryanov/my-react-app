@@ -1,14 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
 import Release from "./release";
-import { addRelease, releaseLoaderOn, releaseLoaderOff } from "../../redux/release_reduser";
+import { addRelease, releaseLoaderOn, releaseLoaderOff, offsetPlus, offsetMinus } from "../../redux/release_reduser";
 import { request } from  "../../api/api"
 
 
 let contentParam = (state) => {
     return {
         releases: state.releases.releases,
-        loader: state.releases.releaseLoader
+        loader: state.releases.releaseLoader,
+        offset: state.releases.offset
     }
 }
 
@@ -21,19 +22,24 @@ class PreRelease extends React.Component {
         this.buttonPreviousPage = this.buttonPreviousPage.bind(this)
     }
 
-    async componentDidMount()  {                
-        this.props.addRelease(await request("https://api.spotify.com/v1/browse/new-releases"))
+    async componentDidMount()  {
+        let offset = this.props.offset
+        this.props.addRelease(await request(
+            `https://api.spotify.com/v1/browse/new-releases?locale=ru&offset=${offset}&limit=20`
+            ))
         this.props.releaseLoaderOff()
     }
 
     async buttonNextPage(value) {
         this.props.releaseLoaderOn()
+        this.props.offsetPlus(this.props.releases.albums.offset + 20)
         this.props.addRelease(await request(value))
         this.props.releaseLoaderOff()
     }
 
     async buttonPreviousPage(value) {
         this.props.releaseLoaderOn()
+        this.props.offsetMinus(this.props.releases.albums.offset - 20)
         this.props.addRelease(await request(value))
         this.props.releaseLoaderOff()
     }
@@ -54,7 +60,13 @@ class PreRelease extends React.Component {
 }
 
 
-const ContainerRelease = connect(contentParam, {addRelease, releaseLoaderOn, releaseLoaderOff})(PreRelease)
+const ContainerRelease = connect(contentParam, {
+    addRelease, 
+    releaseLoaderOn, 
+    releaseLoaderOff, 
+    offsetPlus,
+    offsetMinus
+})(PreRelease)
 
 
 export default ContainerRelease;
