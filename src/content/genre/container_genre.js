@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import React from "react";
 import { addGenre, genreLoaderOff } from "../../redux/genre_reduser";
 import { request } from  "../../api/api"
+import Preloader from "../preloader/preloader";
+
 
 
 let contentParam = (state) => {
@@ -23,7 +25,7 @@ class PreGenre extends React.Component {
     render() {
         if (this.props.loader) {
             return (
-                <h1>Loading...</h1>
+                <Preloader/>
             )
         }
         return (<Genre genres={this.props.genres.genres}/>)

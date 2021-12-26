@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import s from "./album.module.css"
 import { useParams } from "react-router-dom";
 import { request } from  "../../api/api";
+import Preloader from "../preloader/preloader";
 
 
 function Album(props) {
@@ -17,7 +18,7 @@ function Album(props) {
 
     if (!count) {
         return (
-            <h1>Loading...</h1>
+            <Preloader/>
         )
     }
 

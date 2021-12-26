@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { request } from  "../../api/api";
 import s from "./track.module.css"
+import Preloader from "../preloader/preloader";
 
 
 function Track(props) {
@@ -17,7 +18,7 @@ function Track(props) {
 
     if (!count) {
         return (
-            <h1>Loading...</h1>
+            <Preloader/>
         )
     }
 

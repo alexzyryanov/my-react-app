@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import s from "./playlist.module.css";
 import { Link, useParams } from "react-router-dom";
 import { request } from  "../../api/api";
+import Preloader from "../preloader/preloader";
 
 
 function Playlist(props) {
@@ -10,14 +11,14 @@ function Playlist(props) {
     const [count, setCount] = useState(null)
 
     useEffect(async () => {
-        setCount(await request(`https://api.spotify.com/v1/browse/categories/${id}/playlists`))
+        setCount(await request(`https://api.spotify.com/v1/browse/categories/${id}/playlists?country=RU`))
     }, [])
 
     console.log(count)
 
     if (!count) {
         return (
-            <h1>Loading...</h1>
+            <Preloader/>
         )
     }
 

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { addCategorie, categorieLoaderOn, categorieLoaderOff } from "../../redux/categorie_reduser";
 import Categorie from "./categorie";
 import { request } from  "../../api/api"
+import Preloader from "../preloader/preloader";
 
 
 let contentParam = (state) => {
@@ -23,7 +24,7 @@ class PreCategorie extends React.Component {
 
 
     async componentDidMount()  {  
-        this.props.addCategorie(await request("https://api.spotify.com/v1/browse/categories"))
+        this.props.addCategorie(await request("https://api.spotify.com/v1/browse/categories?country=RU&locale=ru_RU"))
         this.props.categorieLoaderOff()
     }
 
@@ -43,7 +44,7 @@ class PreCategorie extends React.Component {
     render() {
         if (this.props.loader) {
             return (
-                <h1>Loading...</h1>
+                <Preloader/>
             )
         }
         return (

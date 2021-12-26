@@ -1,0 +1,31 @@
+.preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+}
+  
+.ball {
+    background-color: greenyellow;
+    box-shadow: 0px 0px 10px 5px greenyellow;
+    height: 20px;
+    width: 20px;
+    border-radius: 50px;
+    transition: 1s;
+    animation-name: ball_move;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+  
+@keyframes ball_move {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(2);
+    }
+    100% {
+      transform: scale(1);
+    }
+}

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import Release from "./release";
 import { addRelease, releaseLoaderOn, releaseLoaderOff, offsetPlus, offsetMinus } from "../../redux/release_reduser";
 import { request } from  "../../api/api"
+import Preloader from "../preloader/preloader";
 
 
 let contentParam = (state) => {
@@ -47,7 +48,7 @@ class PreRelease extends React.Component {
     render() {
         if (this.props.loader) {
             return (
-                <h1>Loading...</h1>
+                <Preloader/>
             )
         }
         return (
