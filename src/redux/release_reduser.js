@@ -1,14 +1,14 @@
 const ADD_RELEASE = "ADD_RELEASE"
 const RELEASE_LOADER_ON = "RELEASE_LOADER_ON"
 const RELEASE_LOADER_OFF = "RELEASE_LOADER_OFF"
-const OFFSET_PLUS = "OFFSET_PLUS"
-const OFFSET_MINUS = "OFFSET_MINUS"
+const RELEASE_OFFSET_PLUS = "RELEASE_OFFSET_PLUS"
+const RELEASE_OFFSET_MINUS = "RELEASE_OFFSET_MINUS"
 
 
 let initialState = {
     releases: null,
     releaseLoader: true,
-    offset: 0
+    releaseOffset: 0
 }
 
 
@@ -33,16 +33,16 @@ const releaseReduser = (state = initialState, action) => {
                 releaseLoader: action.text
             }
 
-        case OFFSET_PLUS:
+        case RELEASE_OFFSET_PLUS:
             return {
                 ...state,
-                offset: action.text
+                releaseOffset: action.text
             }
 
-        case OFFSET_MINUS:
+        case RELEASE_OFFSET_MINUS:
             return {
                 ...state,
-                offset: action.text
+                releaseOffset: action.text
             }
 
         default:
@@ -75,17 +75,17 @@ export let releaseLoaderOn = () => {
 }
 
 
-export let offsetPlus = (text) => {
+export let releasePlus = (text) => {
     return {
-        type: OFFSET_PLUS,
+        type: RELEASE_OFFSET_PLUS,
         text: text
     }
 }
 
 
-export let offsetMinus = (text) => {
+export let releaseMinus = (text) => {
     return {
-        type: OFFSET_MINUS,
+        type: RELEASE_OFFSET_MINUS,
         text: text
     }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Release from "./release";
-import { addRelease, releaseLoaderOn, releaseLoaderOff, offsetPlus, offsetMinus } from "../../redux/release_reduser";
+import { addRelease, releaseLoaderOn, releaseLoaderOff, releasePlus, releaseMinus } from "../../redux/release_reduser";
 import { request } from  "../../api/api"
 import Preloader from "../preloader/preloader";
 
@@ -10,7 +10,7 @@ let contentParam = (state) => {
     return {
         releases: state.releases.releases,
         loader: state.releases.releaseLoader,
-        offset: state.releases.offset
+        offset: state.releases.releaseOffset
     }
 }
 
@@ -33,14 +33,14 @@ class PreRelease extends React.Component {
 
     async buttonNextPage(value) {
         this.props.releaseLoaderOn()
-        this.props.offsetPlus(this.props.releases.albums.offset + 20)
+        this.props.releasePlus(this.props.releases.albums.offset + 20)
         this.props.addRelease(await request(value))
         this.props.releaseLoaderOff()
     }
 
     async buttonPreviousPage(value) {
         this.props.releaseLoaderOn()
-        this.props.offsetMinus(this.props.releases.albums.offset - 20)
+        this.props.releaseMinus(this.props.releases.albums.offset - 20)
         this.props.addRelease(await request(value))
         this.props.releaseLoaderOff()
     }
@@ -65,8 +65,8 @@ const ContainerRelease = connect(contentParam, {
     addRelease, 
     releaseLoaderOn, 
     releaseLoaderOff, 
-    offsetPlus,
-    offsetMinus
+    releasePlus,
+    releaseMinus
 })(PreRelease)
 
 
