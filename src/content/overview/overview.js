@@ -10,11 +10,12 @@ function Overview(props) {
 
     const [count, setCount] = useState(null)
 
-    useEffect(async () => {
-        setCount(await request(`https://api.spotify.com/v1/recommendations?seed_genres=${id}`))
-    }, [])
-
-    console.log(count)
+    useEffect(() => {
+        async function fetchData() {
+            setCount(await request(`https://api.spotify.com/v1/recommendations?seed_genres=${id}`))
+        }
+        fetchData()
+    }, [id])
 
     if (!count) {
         return (
@@ -24,13 +25,13 @@ function Overview(props) {
 
     return (
         <>
-        <div class={s.items}>
-            {count.tracks.map(track => {
+        <div className={s.items}>
+            {count.tracks.map((track, index) => {
                 return (
-                    <a href={track.external_urls.spotify} target="_blank">
-                        <div class={s.item}>
+                    <a key={index} href={track.external_urls.spotify} target="_blank" rel="noopener noreferrer">
+                        <div className={s.item}>
                             <img src={track.album.images[2].url} alt="cover"/>
-                            <div class={s.name}>
+                            <div className={s.name}>
                                 <h1>{track.name}</h1>
                             </div>
                         </div>

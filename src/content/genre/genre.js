@@ -4,17 +4,16 @@ import s from "./genre.module.css";
 
 
 function Genre(props) {
-    console.log(props)
     return (
         <div className={s.items}>
             {props.genres.map((genre, index) => {
                 return (
-                    <Link to={`/overview/${genre}`}>
-                    <div key={index} className={s.item}>
-                        <div className={s.name}>
-                            <h1>{genre}</h1>
+                    <Link key={index} to={`/overview/${genre}`}>
+                        <div className={s.item}>
+                            <div className={s.name}>
+                                <h1>{genre}</h1>
+                            </div>
                         </div>
-                    </div>
                     </Link>
                 )
             })}

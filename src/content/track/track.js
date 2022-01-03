@@ -10,11 +10,12 @@ function Track(props) {
 
     const [count, setCount] = useState(null)
 
-    useEffect(async () => {
-        setCount(await request(`https://api.spotify.com/v1/playlists/${id}`))
-    }, [])
-
-    console.log(count)
+    useEffect(() => {
+        async function fetchData() {
+            setCount(await request(`https://api.spotify.com/v1/playlists/${id}`))
+        }
+        fetchData()
+    }, [id])
 
     if (!count) {
         return (
@@ -24,25 +25,25 @@ function Track(props) {
 
     return (
         <>
-        <div class={s.album_page}>
-            <div class={s.about}>
+        <div className={s.album_page}>
+            <div className={s.about}>
                 <img src={count.images[0].url} alt="cover"/>
-                <div class={s.info}>
-                    <div class={s.type}>
+                <div className={s.info}>
+                    <div className={s.type}>
                         <p>{count.type}</p>
                     </div>
-                    <div class={s.name}>
-                        <a href={count.external_urls.spotify} target="_blank">{count.name}</a>
+                    <div className={s.name}>
+                        <a href={count.external_urls.spotify} target="_blank" rel="noopener noreferrer">{count.name}</a>
                     </div>
-                    <div class={s.total}>
+                    <div className={s.total}>
                         <p>{count.tracks.total} треков</p>
                     </div>
                 </div>
             </div>
-            <div class={s.tracks}>
-                {count.tracks.items.map((track) => {
+            <div className={s.tracks}>
+                {count.tracks.items.map((track, index) => {
                     return(
-                        <div class={s.track}>
+                        <div key={index} className={s.track}>
                             <audio src={track.track.preview_url} controls></audio>
                         </div>
                     )
