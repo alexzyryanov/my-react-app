@@ -1,6 +1,18 @@
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     margin-bottom: 30px;
+}
+
+.logo {
+    margin-left: 40px;
+    height: 40px;
+}
+
+.logo > img  {
+    height: 100%;
 }
 
 .nav {
@@ -9,17 +21,16 @@ header {
 }
 
 .nav > a {
+    margin-right: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 60px;
-    width: 200px;
     text-decoration: none;
     color: white;
     font-size: 30px;
-    font-weight: bold;
 }
 
 .nav > a:hover {
-    color: chartreuse;
+    color: #1db954;
 }

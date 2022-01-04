@@ -1,48 +1,39 @@
-const ADD_GENRE = "ADD_GENRE"
-const GENRE_LOADER_OFF = "GENRE_LOADER_OFF"
+const ADD_GENRE = 'ADD_GENRE';
+const GENRE_LOADER_OFF = 'GENRE_LOADER_OFF';
 
+const initialState = {
+  genres: null,
+  genreLoader: true,
+};
 
-let initialState = {
-    genres: null,
-    genreLoader: true
-}
-
-
+// eslint-disable-next-line default-param-last
 const genreReduser = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_GENRE:
+      return {
+        ...state,
+        genres: action.text,
+      };
 
-    switch (action.type) {
-        case ADD_GENRE:
-            return {
-                ...state,
-                genres: action.text
-            }
+    case GENRE_LOADER_OFF:
+      return {
+        ...state,
+        genreLoader: action.text,
+      };
 
-        case GENRE_LOADER_OFF:
-            return {
-                ...state,
-                genreLoader: action.text
-            }
+    default:
+      return state;
+  }
+};
 
-        default:
-            return state
-    }
-}
+export const addGenre = (text) => ({
+  type: ADD_GENRE,
+  text,
+});
 
-
-export let addGenre = (text) => {
-    return {
-        type: ADD_GENRE,
-        text: text
-    }
-}
-
-
-export let genreLoaderOff = () => {
-    return {
-        type: GENRE_LOADER_OFF,
-        text: false
-    }
-}
-
+export const genreLoaderOff = () => ({
+  type: GENRE_LOADER_OFF,
+  text: false,
+});
 
 export default genreReduser;

@@ -8,8 +8,8 @@
 }
   
 .ball {
-    background-color: greenyellow;
-    box-shadow: 0px 0px 10px 5px greenyellow;
+    background-color: #1db954;
+    box-shadow: 0px 0px 10px 5px #1db954;
     height: 20px;
     width: 20px;
     border-radius: 50px;

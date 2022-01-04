@@ -47,7 +47,7 @@
 }
 
 .name > a:hover {
-    color: greenyellow;
+    color: #1db954;
 }
 
 .artists {
@@ -61,7 +61,7 @@
 }
 
 .artists > a:hover {
-    color: greenyellow;
+    color: #1db954;
 }
 
 .tracks {

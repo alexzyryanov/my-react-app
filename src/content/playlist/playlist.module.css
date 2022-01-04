@@ -14,7 +14,7 @@
 }
 
 .item:hover {
-    box-shadow: 0px 0px 10px 5px greenyellow;
+    box-shadow: 0px 0px 10px 5px #1db954;
 }
 
 .cover > img {
@@ -65,7 +65,7 @@
 }
 
 .paginator > button:hover {
-    color: greenyellow;
+    color: #1db954;
 }
 
 .paginator > button:disabled {
