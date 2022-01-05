@@ -13,17 +13,20 @@ const contentParam = (state) => ({
 
 class PreGenre extends React.Component {
   async componentDidMount() {
-    this.props.addGenre(await request('https://api.spotify.com/v1/recommendations/available-genre-seeds'));
-    this.props.genreLoaderOff();
+    const { addGenre: add, genreLoaderOff: off } = this.props;
+    add(await request('https://api.spotify.com/v1/recommendations/available-genre-seeds'));
+    off();
   }
 
   render() {
-    if (this.props.loader) {
+    const { loader } = this.props;
+    if (loader) {
       return (
         <Preloader />
       );
     }
-    return (<Genre genres={this.props.genres.genres} />);
+    const { genres } = this.props;
+    return (<Genre genres={genres.genres} />);
   }
 }
 
@@ -33,7 +36,7 @@ PreGenre.propTypes = {
   addGenre: PropTypes.func.isRequired,
   genreLoaderOff: PropTypes.func.isRequired,
   loader: PropTypes.bool.isRequired,
-  genres: PropTypes.string.isRequired,
+  genres: PropTypes.arrayOf.isRequired,
 };
 
 export default ContainerGenre;

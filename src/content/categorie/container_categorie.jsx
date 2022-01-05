@@ -22,36 +22,52 @@ class PreCategorie extends React.Component {
   }
 
   async componentDidMount() {
-    const { offset } = this.props;
-    this.props.addCategorie(await request(
+    const { offset, addCategorie: add, categorieLoaderOff: off } = this.props;
+    add(await request(
       `https://api.spotify.com/v1/browse/categories?country=RU&locale=ru_ru&offset=${offset}&limit=20`,
     ));
-    this.props.categorieLoaderOff();
+    off();
   }
 
   async buttonNextPage(value) {
-    this.props.categorieLoaderOn();
-    this.props.categoriePlus(this.props.categories.categories.offset + 20);
-    this.props.addCategorie(await request(value));
-    this.props.categorieLoaderOff();
+    const {
+      categories,
+      addCategorie: add,
+      categorieLoaderOff: off,
+      categorieLoaderOn: on,
+      categoriePlus: plus,
+    } = this.props;
+    on();
+    plus(categories.categories.offset + 20);
+    add(await request(value));
+    off();
   }
 
   async buttonPreviousPage(value) {
-    this.props.categorieLoaderOn();
-    this.props.categorieMinus(this.props.categories.categories.offset - 20);
-    this.props.addCategorie(await request(value));
-    this.props.categorieLoaderOff();
+    const {
+      categories,
+      addCategorie: add,
+      categorieLoaderOff: off,
+      categorieLoaderOn: on,
+      categorieMinus: minus,
+    } = this.props;
+    on();
+    minus(categories.categories.offset - 20);
+    add(await request(value));
+    off();
   }
 
   render() {
-    if (this.props.loader) {
+    const { loader } = this.props;
+    if (loader) {
       return (
         <Preloader />
       );
     }
+    const { categories } = this.props;
     return (
       <Categorie
-        categories={this.props.categories.categories}
+        categories={categories.categories}
         buttonNextPage={this.buttonNextPage}
         buttonPreviousPage={this.buttonPreviousPage}
       />
@@ -68,7 +84,7 @@ const ContainerCategorie = connect(contentParam, {
 })(PreCategorie);
 
 PreCategorie.propTypes = {
-  categories: PropTypes.string.isRequired,
+  categories: PropTypes.objectOf.isRequired,
   addCategorie: PropTypes.func.isRequired,
   categorieLoaderOff: PropTypes.func.isRequired,
   categorieLoaderOn: PropTypes.func.isRequired,

@@ -1,9 +1,12 @@
 import React from 'react';
-import './home.module.css';
+import s from './home.module.css';
+import icon from './icon.png';
 
 function Home() {
   return (
-    <h1>Home</h1>
+    <div className={s.icon}>
+      <img src={icon} alt="icon" />
+    </div>
   );
 }
 

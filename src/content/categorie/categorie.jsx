@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 import s from './categorie.module.css';
 
 function Categorie(props) {
+  const { categories, buttonPreviousPage: PreviousPage, buttonNextPage: NextPage } = props;
   return (
     <>
       <div className={s.items}>
-        {props.categories.items.map((categ) => (
+        {categories.items.map((categ) => (
           <Link key={categ.id} to={`/playlists/${categ.id}`}>
             <div className={s.item}>
               <img src={categ.icons[0].url} alt="cover" />
@@ -19,21 +20,21 @@ function Categorie(props) {
         ))}
       </div>
       <div className={s.paginator}>
-        {props.categories.previous
+        {categories.previous
           ? (
             <button
               type="button"
-              onClick={() => { props.buttonPreviousPage(props.categories.previous); }}
+              onClick={() => { PreviousPage(categories.previous); }}
             >
               Previous
             </button>
           )
           : (<button type="button" disabled>Previous</button>)}
-        {props.categories.next
+        {categories.next
           ? (
             <button
               type="button"
-              onClick={() => { props.buttonNextPage(props.categories.next); }}
+              onClick={() => { NextPage(categories.next); }}
             >
               Next
             </button>
@@ -45,7 +46,7 @@ function Categorie(props) {
 }
 
 Categorie.propTypes = {
-  categories: PropTypes.string.isRequired,
+  categories: PropTypes.objectOf.isRequired,
   buttonPreviousPage: PropTypes.func.isRequired,
   buttonNextPage: PropTypes.func.isRequired,
 };

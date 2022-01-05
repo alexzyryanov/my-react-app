@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 import s from './release.module.css';
 
 function Release(props) {
+  const { releases, buttonPreviousPage: PreviousPage, buttonNextPage: NextPage } = props;
   return (
     <>
       <div className={s.items}>
-        {props.releases.albums.items.map((album) => (
+        {releases.albums.items.map((album) => (
           <Link key={album.id} to={`/albums/${album.id}`}>
             <div className={s.item}>
               <div className={s.cover}>
@@ -30,21 +31,21 @@ function Release(props) {
         ))}
       </div>
       <div className={s.paginator}>
-        {props.releases.albums.previous
+        {releases.albums.previous
           ? (
             <button
               type="button"
-              onClick={() => { props.buttonPreviousPage(props.releases.albums.previous); }}
+              onClick={() => { PreviousPage(releases.albums.previous); }}
             >
               Previous
             </button>
           )
           : (<button type="button" disabled>Previous</button>)}
-        {props.releases.albums.next
+        {releases.albums.next
           ? (
             <button
               type="button"
-              onClick={() => { props.buttonNextPage(props.releases.albums.next); }}
+              onClick={() => { NextPage(releases.albums.next); }}
             >
               Next
             </button>
@@ -56,7 +57,7 @@ function Release(props) {
 }
 
 Release.propTypes = {
-  releases: PropTypes.string.isRequired,
+  releases: PropTypes.objectOf.isRequired,
   buttonPreviousPage: PropTypes.func.isRequired,
   buttonNextPage: PropTypes.func.isRequired,
 };

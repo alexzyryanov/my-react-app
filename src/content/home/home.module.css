@@ -1,3 +1,10 @@
-h1 {
-    color: white;
+.icon {
+    margin: auto auto;
+    height: 100px;
+    width: 100px;
+}
+
+.icon > img {
+    height: 100%;
+    width: 100%;
 }

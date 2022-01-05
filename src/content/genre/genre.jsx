@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 import s from './genre.module.css';
 
 function Genre(props) {
+  const { genres } = props;
   return (
     <div className={s.items}>
-      {props.genres.map((genre, index) => (
+      {genres.map((genre, index) => (
         // eslint-disable-next-line react/no-array-index-key
         <Link key={index} to={`/overview/${genre}`}>
           <div className={s.item}>
@@ -21,7 +22,7 @@ function Genre(props) {
 }
 
 Genre.propTypes = {
-  genres: PropTypes.string.isRequired,
+  genres: PropTypes.arrayOf.isRequired,
 };
 
 export default Genre;
