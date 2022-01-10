@@ -14,7 +14,7 @@ function Content() {
   return (
     <div className={s.content}>
       <Routes>
-        <Route path="/" element={<ContainerHome />} />
+        <Route path="/my-react-app/" element={<ContainerHome />} />
         <Route path="/genres" element={<ContainerGenre />} />
         <Route path="/categories" element={<ContainerCategorie />} />
         <Route path="/releases" element={<ContainerRelease />} />

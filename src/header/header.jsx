@@ -10,7 +10,7 @@ function Header() {
         <img src={logo} alt="cover" />
       </div>
       <div className={s.nav}>
-        <NavLink to="/">Главная</NavLink>
+        <NavLink to="/my-react-app/">Главная</NavLink>
         <NavLink to="/genres">Жанры</NavLink>
         <NavLink to="/categories">Категории</NavLink>
         <NavLink to="/releases">Релизы</NavLink>
