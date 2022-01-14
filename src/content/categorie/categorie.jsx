@@ -12,9 +12,7 @@ function Categorie(props) {
           <Link key={categ.id} to={`/playlists/${categ.id}`}>
             <div className={s.item}>
               <img src={categ.icons[0].url} alt="cover" />
-              <div className={s.name}>
-                <h1>{categ.name}</h1>
-              </div>
+              <p>{categ.name}</p>
             </div>
           </Link>
         ))}

@@ -27,19 +27,13 @@ function Playlist() {
       {count.playlists.items.map((data) => (
         <Link key={data.id} to={`/tracks/${data.id}`}>
           <div className={s.item}>
-            <div className={s.cover}>
-              <img src={data.images[0].url} alt="cover" />
-            </div>
-            <div className={s.name}>
-              <h1>{data.name}</h1>
-            </div>
-            <div className={s.info}>
-              <p>
-                {data.tracks.total}
-                {' '}
-                треков
-              </p>
-            </div>
+            <img src={data.images[0].url} alt="cover" />
+            <p>{data.name}</p>
+            <p>
+              {data.tracks.total}
+              {' '}
+              треков
+            </p>
           </div>
         </Link>
       ))}

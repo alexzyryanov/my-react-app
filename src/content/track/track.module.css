@@ -1,61 +1,56 @@
 .album_page {
-    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .about {
+    margin: 1vh 0;
     display: flex;
-    height: 200px;
+    height: 20vh;
     width: 100%;
-    margin-bottom: 30px;
 }
 
 .about > img {
-    height: 200px;
-    width: 200px;
+    height: 20vh;
+    width: 20vh;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
 .info {
     height: 100%;
-    width: 800px;
+    width: calc(100% - 20vh);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     background-color: #292929;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 
-.type {
-    margin: 10px;
-}
-
-.type > p {
-    font-weight: bold;
+.info > p {
+    width: 80%;
+    margin: 0 10%;
+    font-size: 2vh;
     color: white;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-.name {
-    margin: 10px;
-}
-
-.name > a {
-    font-size: 40px;
+.info > a {
+    width: 80%;
+    margin: 0 10%;
+    font-size: 3vh;
     color: white;
-    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-.name > a:hover {
+.info > a:hover {
     color: #1db954;
-}
-
-.total {
-    margin: 10px;
-}
-
-.total > p {
-    color: white;
 }
 
 .tracks {
@@ -65,5 +60,5 @@
 }
 
 .track {
-    margin: 10px;
+    margin: 1vh 0;
 }

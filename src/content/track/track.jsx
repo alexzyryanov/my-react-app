@@ -27,19 +27,13 @@ function Track() {
       <div className={s.about}>
         <img src={count.images[0].url} alt="cover" />
         <div className={s.info}>
-          <div className={s.type}>
-            <p>{count.type}</p>
-          </div>
-          <div className={s.name}>
-            <a href={count.external_urls.spotify} target="_blank" rel="noopener noreferrer">{count.name}</a>
-          </div>
-          <div className={s.total}>
-            <p>
-              {count.tracks.total}
-              {' '}
-              треков
-            </p>
-          </div>
+          <p>{count.type}</p>
+          <a href={count.external_urls.spotify} target="_blank" rel="noopener noreferrer">{count.name}</a>
+          <p>
+            {count.tracks.total}
+            {' '}
+            треков
+          </p>
         </div>
       </div>
       <div className={s.tracks}>

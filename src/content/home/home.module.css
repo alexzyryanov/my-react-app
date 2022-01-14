@@ -1,7 +1,11 @@
+:root {
+    --icon-h: 13vh;
+}
+
 .icon {
     margin: auto auto;
-    height: 100px;
-    width: 100px;
+    height: var(--icon-h);
+    width: var(--icon-h);
 }
 
 .icon > img {

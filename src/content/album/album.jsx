@@ -27,12 +27,8 @@ function Album() {
       <div className={s.about}>
         <img src={count.images[1].url} alt="cover" />
         <div className={s.info}>
-          <div className={s.type}>
-            <p>{count.album_type}</p>
-          </div>
-          <div className={s.name}>
-            <a href={count.external_urls.spotify} target="_blank" rel="noopener noreferrer">{count.name}</a>
-          </div>
+          <p>{count.album_type}</p>
+          <a href={count.external_urls.spotify} target="_blank" rel="noopener noreferrer">{count.name}</a>
           <div className={s.artists}>
             {count.artists.map((artist) => (
               <a key={artist.id} href={artist.external_urls.spotify} target="_blank" rel="noopener noreferrer">{artist.name}</a>

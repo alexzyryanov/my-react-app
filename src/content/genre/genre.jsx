@@ -9,12 +9,8 @@ function Genre(props) {
     <div className={s.items}>
       {genres.map((genre, index) => (
         // eslint-disable-next-line react/no-array-index-key
-        <Link key={index} to={`/overview/${genre}`}>
-          <div className={s.item}>
-            <div className={s.name}>
-              <h1>{genre}</h1>
-            </div>
-          </div>
+        <Link className={s.item} key={index} to={`/overview/${genre}`}>
+          <p>{genre}</p>
         </Link>
       ))}
     </div>

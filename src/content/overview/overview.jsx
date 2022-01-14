@@ -29,7 +29,7 @@ function Overview() {
           <div className={s.item}>
             <img src={track.album.images[2].url} alt="cover" />
             <div className={s.name}>
-              <h1>{track.name}</h1>
+              <p>{track.name}</p>
             </div>
           </div>
         </a>

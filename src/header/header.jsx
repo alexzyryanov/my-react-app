@@ -7,13 +7,19 @@ function Header() {
   return (
     <header>
       <div className={s.logo}>
-        <img src={logo} alt="cover" />
+        <NavLink to="/my-react-app/">
+          <img src={logo} alt="logo" />
+        </NavLink>
       </div>
-      <div className={s.nav}>
-        <NavLink to="/my-react-app/">Главная</NavLink>
-        <NavLink to="/genres">Жанры</NavLink>
-        <NavLink to="/categories">Категории</NavLink>
-        <NavLink to="/releases">Релизы</NavLink>
+      <div className={s.nav_button}>
+        <div className={s.line} />
+        <div className={s.line} />
+        <div className={s.line} />
+        <div className={s.menu}>
+          <NavLink to="/genres">Жанры</NavLink>
+          <NavLink to="/categories">Категории</NavLink>
+          <NavLink to="/releases">Релизы</NavLink>
+        </div>
       </div>
     </header>
   );

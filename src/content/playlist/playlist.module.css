@@ -1,15 +1,15 @@
 .items {
-    margin-bottom: 30px;
     display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
 .item {
     background-color: #292929;
-    margin: 10px;
+    margin: 1vh;
     display: flex;
     flex-direction: column;
-    width: 250px;
+    width: 20vh;
     border-radius: 10px;
 }
 
@@ -17,57 +17,19 @@
     box-shadow: 0px 0px 10px 5px #1db954;
 }
 
-.cover > img {
-    height: 200px;
-    width: 200px;
-    margin: 25px 25px 10px 25px;
+.item > img {
+    height: 20vh;
+    width: 20vh;
     border-radius: 10px;
 }
 
-.name {
-    margin: 0 25px;
-}
-
-.name > h1 {
+.item > p {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
     color: white;
-}
-
-.info {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 25px 25px 25px;
-}
-
-.info > p {
-    margin-right: 10px;
-    color: white;
-}
-
-.paginator {
-    margin: 10px;
-    display: flex;
-    justify-content: space-between;
-    height: 50px;
-    width: 300px;
-}
-
-.paginator > button {
-    height: 100%;
-    width: 45%;
-    border: none;
-    border-radius: 10px;
-    background-color: #292929;
-    font-size: 20px;
-    color: white;
-}
-
-.paginator > button:hover {
-    color: #1db954;
-}
-
-.paginator > button:disabled {
-    opacity: 0;
+    font-size: 2vh;
+    width: 80%;
+    margin: 1vh 10%;
+    text-align: center;
 }

@@ -9,23 +9,15 @@ function Release(props) {
     <>
       <div className={s.items}>
         {releases.albums.items.map((album) => (
-          <Link key={album.id} to={`/albums/${album.id}`}>
-            <div className={s.item}>
-              <div className={s.cover}>
-                <img src={album.images[1].url} alt="img" />
-              </div>
-
-              <div className={s.name}>
-                <h1>{album.name}</h1>
-              </div>
-
-              <div className={s.artists}>
-                <p>
-                  {album.artists.map((artist) => (
-                    `${artist.name} `
-                  ))}
-                </p>
-              </div>
+          <Link className={s.item} key={album.id} to={`/albums/${album.id}`}>
+            <img src={album.images[1].url} alt="img" />
+            <p>{album.name}</p>
+            <div className={s.artists}>
+              <p>
+                {album.artists.map((artist) => (
+                  `${artist.name} `
+                ))}
+              </p>
             </div>
           </Link>
         ))}

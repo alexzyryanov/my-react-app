@@ -1,15 +1,15 @@
 .items {
-    margin-bottom: 30px;
     display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
 .item {
-    margin: 10px;
+    margin: 1vh;
     display: flex;
     position: relative;
-    height: 250px;
-    width: 250px;
+    height: 20vh;
+    width: 20vh;
     border-radius: 10px;
 }
 
@@ -23,27 +23,25 @@
     border-radius: 10px;
 }
 
-.name {
-    display: flex;
-    justify-content: center;
+.item > p {
+    margin: 0 10%;
     position: absolute;
-    width: 100%;
-    bottom: 10px;
-}
-
-.name > h1 {
-    margin: 0 10px;
+    width: 80%;
+    text-align: center;
+    bottom: 2vh;
     color: white;
+    font-size: 2vh;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
 
 .paginator {
+    margin: 1vh 0;
     display: flex;
     justify-content: space-between;
-    height: 50px;
-    width: 300px;
+    height: 8vh;
+    width: 90%;
 }
 
 .paginator > button {
@@ -52,7 +50,7 @@
     border: none;
     border-radius: 10px;
     background-color: #292929;
-    font-size: 20px;
+    font-size: 2vh;
     color: white;
 }
 
