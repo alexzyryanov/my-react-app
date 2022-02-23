@@ -41,7 +41,6 @@ a > img {
 .menu {
     position: fixed;
     background-color: black;
-    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -57,8 +56,4 @@ a > img {
     color: white;
     font-size: 5vh;
     margin: 1vh 0;
-}
-  
-.nav_button:hover .menu {
-    display: flex;
 }
